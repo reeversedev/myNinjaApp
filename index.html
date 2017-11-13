@@ -8,20 +8,17 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
     <script src="app.js"></script>
     <title>myNinjaApp</title>
 </head>
 
 <body>
-    <div ng-controller="NinjaController">
-        <header ng-include="'header.html'"></header>
-        <div class="content">
-        <input type="text" ng-model="search">
-        <ul>
-            <li ng-repeat="ninja in ninjas | orderBy: 'name' | filter: search" ng-show="ninja.available">{{ninja.name}} - {{ninja.rate | currency: '₹'}}</li>
-        </ul>
-    </div>
-    </div>
+    <header ng-include="'header.html'"></header>
+
+    <main ng-view>
+
+    </main>
 </body>
 
 </html>
